@@ -1,0 +1,20 @@
+#suite s21_remove_matrix
+
+#test remove_matrix_1
+  matrix_t A = {NULL, 0, 33};
+  matrix_t B = {NULL, 54, 0};
+  matrix_t C = {NULL, 123, 123};
+  matrix_t D = {NULL, 0, 45};
+  matrix_t E = {NULL, 33, 0};
+  s21_create_matrix(313, 321, &E);
+  s21_remove_matrix(&A);
+  ck_assert_int_eq(A.columns, 0);
+  s21_remove_matrix(&B);
+  ck_assert_int_eq(B.rows, 0);
+  s21_remove_matrix(&C);
+  ck_assert_int_eq(C.rows, 0);
+  ck_assert_int_eq(C.columns, 0);
+  s21_remove_matrix(&D);
+  ck_assert_int_eq(D.columns, 0);
+  s21_remove_matrix(&E);
+  ck_assert_int_eq(E.rows, 0);
